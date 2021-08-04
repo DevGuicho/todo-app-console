@@ -1,6 +1,7 @@
 require('colors')
 const inquirer = require('inquirer')
 const { inquirerMenu, pausa, leerInput } = require('./helpers/inquirer')
+
 const Tareas = require('./models/Tareas')
 
 const main = async () => {
@@ -8,6 +9,7 @@ const main = async () => {
   const tareas = new Tareas()
 
   do {
+    //Imprimir menu interactivo
     opt = await inquirerMenu()
 
     switch (opt) {
@@ -17,7 +19,7 @@ const main = async () => {
         console.log({ desc })
         break
       case '2':
-        console.log(tareas._listado)
+        console.log(tareas.listadoArr)
         break
     }
 
